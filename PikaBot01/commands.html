@@ -42,12 +42,18 @@ li a:hover:not(.active) {
 .active {
     background-color: #0066ff;
 }
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
 </style>
 <link rel="icon" href="source/images/icon.ico">
 <a href="../index.html" style="font-family: 'Joystix' "><<-- Back to index</a>
 </head>
 <body style="background-image:url('source/images/background.png'); background-repeat:repeat-x;">
-<!--Dumb generator didn't want to give me the entire image, but wanted to give me a strip .-. -->
 <ul>
   <li><a class="active" href="../home.html" style="font-family: 'DejaVuSerif'">Home</a></li>
   <li><a href="commands.html" style="font-family: 'DejaVuSerif'">Commands</a></li>
@@ -57,3 +63,22 @@ li a:hover:not(.active) {
 <p style="text-align:center; font-size:175%; font-family: 'DejaVuSerif'">A Bot For <a href="http://discordapp.com"><img src="source/images/Discord-Logo.png" alt="Discord Logo" width="133" height="32.5" align="top"></img></a></h1>
 <br>
 <br>
+<table style="width:100%">
+  <tr>
+    <th>Command</th>
+    <th>Description</th>
+    <th>Category</th>
+  </tr>
+  <tr>
+    <td>>help</td>
+    <td>Displays information about the bot.</td>
+    <td>Single Command</td>
+  </tr>
+  <tr>
+    <td>>commands</td>
+    <td>Displays a link to this webpage that shows all the available commands.</td>
+    <td>Single Command</td>
+  </tr>
+</table>
+</body>
+</html>
