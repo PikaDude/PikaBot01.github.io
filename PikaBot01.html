@@ -6,49 +6,47 @@
   font-family: 'Joystix';
   src: url('index/source/fonts/joystix.ttf');
 }
+body {margin:0;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
 </style>
 <a href="../index.html" style="font-family: 'Joystix' "><<-- Back to index</a>
-<head>
+</head>
 <body>
-<br>
-<div id="menu">
 <ul>
-<li><a href="index.html">Home</a></li>
-<ul><li><a href="aboutus.html">About Us</a></li>
-<li><a href="services.html">Services</a></li>
-<li><a href="contactus.html">Contact Us</a></li>
+  <li><a class="active" href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li><a href="#about">About</a></li>
 </ul>
-</div>
-<style>
-  #menu {
-    width: 550px;
-    height: 35px;
-    font-size: 16px;
-    font-family: Arial;
-    font-weight: bold;
-    text-align: center;
-    text-shadow: 3px 2px 3px #333333;
-    background-color: #8AD9FF;
-        border-radius: 8px;
-}
-#menu ul {
-    height: auto;
-    padding: 8px 0px;
-    margin: 0px;
-}
-#menu li { 
-display: inline; 
-padding: 20px; 
-}
-#menu a {
-    text-decoration: none;
-    color: #00F;
-    padding: 8px 8px 8px 8px;
-}
-#menu a:hover {
-    color: #F90;
-    background-color: #FFF;
-}
-</style>
 </body>
 </html>
