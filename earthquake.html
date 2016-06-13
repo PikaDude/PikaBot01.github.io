@@ -17,9 +17,13 @@
 	/* The Magic */
 	background-size:cover;
 }
+body{
+	/* Workaround for some mobile browsers */
+	min-height:100%;
+}
 </style>
 </head>
-<body style="background-image:url('earthquake/source/images/background.jpg'); background-repeat: no-repeat; background-size:cover;">
+<body>
 <img class="shake-horizontal shake-constant" style="margin: 100 auto; display:block; position:absolute" src="earthquake/source/images/land.png" alt="land" height="500" width="1300">
 <p class="shake-crazy shake-constant" style="font-family: 'Comic Sans MS'; font-size:400%; margin: 50 100; position:absolute;">EARTHQUAKE</p>
 <img class="shake-rotate shake-constant" style="margin: 350 270; display:block; position:absolute" src="earthquake/source/images/dude1.png" alt="foreground-dude" height="150" width="150">
