@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>*shakes violently*</title>
@@ -5,6 +6,18 @@
 <link rel="icon" href="earthquake/source/images/icon.ico">
 <script src="earthquake/source/scripts/music.js"></script>
 <audio id="audio" autoplay="autoplay" loop="" style="display: none;"></audio>
+<style>
+  html{
+	/* This image will be displayed fullscreen */
+	background:url('background-image.jpg') no-repeat center center;
+
+	/* Ensure the html element always takes up the full height of the browser window */
+	min-height:100%;
+
+	/* The Magic */
+	background-size:cover;
+}
+</style>
 </head>
 <body style="background-image:url('earthquake/source/images/background.jpg'); background-repeat: no-repeat; background-size:cover;">
 <img class="shake-horizontal shake-constant" style="margin: 100 auto; display:block; position:absolute" src="earthquake/source/images/land.png" alt="land" height="500" width="1300">
