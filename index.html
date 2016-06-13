@@ -40,13 +40,17 @@ nav > ul > li > a {
 }
 html{
 	/* This image will be displayed fullscreen */
-	background:url('background-image.jpg') no-repeat center center;
+	background:url('index/source/images/background.jpg') no-repeat center center;
 
 	/* Ensure the html element always takes up the full height of the browser window */
 	min-height:100%;
 
 	/* The Magic */
 	background-size:cover;
+}
+body{
+	/* Workaround for some mobile browsers */
+	min-height:100%;
 }
 </style>
 <link rel="icon" href="index/source/images/icon.ico">
