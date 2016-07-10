@@ -1,5 +1,8 @@
 <html>
 <head>
+<title>PikaBot01 - Pokemon - Stats</title>
+</head>
+<body>
 <script>
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -8,13 +11,10 @@ function getParameterByName(name, url) {
         results = regex.exec(url);
     if (!results) return null;
     if (!results[2]) return '';
-	document.getElementById("userid").innerHTML = getParameterByName('id');
-    return decodeURIComponent(results[2].replace(/\+/g, " "));
+    decodeURIComponent(results[2].replace(/\+/g, " "));
+    document.getElementById("userid").innerHTML = getParameterByName('id');
 }
 </script>
-<title>PikaBot01 - Pokemon - Stats</title>
-</head>
-<body>
 <span id="userid"></span>
 </body>
 </html>
