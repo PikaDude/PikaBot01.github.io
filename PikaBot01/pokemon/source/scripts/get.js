@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
-</head>
-<body>
-<p id="caught"></p>
-<script>
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -33,7 +25,3 @@ function readTextFile(file)
     }
     rawFile.send(null);
 }
-var caught = readTextFile("http://128.199.142.235/pokemon/caught/" + userid2 + ".txt");
-</script>
-</body>
-</html>
