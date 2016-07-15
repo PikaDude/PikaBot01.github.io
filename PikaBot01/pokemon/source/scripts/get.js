@@ -1,3 +1,4 @@
+window.onload = function() {
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, "\\$&");
@@ -24,4 +25,5 @@ function readTextFile(file)
         }
     }
     rawFile.send(null);
+}
 }
