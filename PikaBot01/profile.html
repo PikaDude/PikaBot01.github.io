@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script src="source/scripts/get.js"></script>
+<style>
+@font-face {
+  font-family: 'Joystix';
+  src: url('source/fonts/joystix.ttf');
+}
+@font-face {
+  font-family: 'DejaVuSerif';
+  src: url('source/fonts/DejaVuSerif.ttf');
+}
+body {margin:0;}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #4d4d4d;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover:not(.active) {
+    background-color: #262626;
+}
+
+.active {
+    background-color: #0066ff;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+}
+html{
+	background:url('source/images/background.jpg') no-repeat center center;
+	min-height:100%;
+	background-size:cover;
+}
+body{
+	min-height:100%;
+}
+</style>
+<link rel="icon" href="source/images/icon.ico">
+<meta name="description" id="description">
+<a href="../index.html" style="font-family: 'Joystix' "><<-- Back to index</a>
+</head>
+<body>
+<ul>
+  <li><a href="home.html" style="font-family: 'DejaVuSerif'">Home</a></li>
+  <li><a href="commands.html" style="font-family: 'DejaVuSerif'">Commands</a></li>
+  <li><a href="https://discord.gg/012P7BEh4fzkryZ6P" style="font-family: 'DejaVuSerif'">Support</a></li>
+  <li><a href="https://discordapp.com/oauth2/authorize?&client_id=169678426360381451&scope=bot" style="font-family: 'DejaVuSerif'">Add PikaBot01 To Your Server</a></li>
+</ul>
+<h1 style="text-align:center; font-size:350%; font-family: 'DejaVuSerif'" id="name"></h1>
+<img style="margin: 0px auto; display:block" id="avatar" alt="Avatar" width="128" height="128" align="top"></img>
+<title id="title"></title>
+<p style="display:inline-block"></p>
+<table style="width:98%;" align="center">
+<tr><th>Coin/Gamble Stats</th></tr>
+<tr><td>Coins Balance</td><td id="coinsbal"></td></tr>
+<tr><td>Gamble Count</td><td id="gamblecount"></td></tr>
+<tr><th>Pokemon Stats</th></tr>
+<tr><td>Pokemon Caught</td><td id="caught"></td></tr>
+<tr><td>Pokeballs</td><td id="pokeballs"></td></tr>
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+</html>
