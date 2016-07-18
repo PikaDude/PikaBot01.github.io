@@ -9,7 +9,11 @@ function getParameterByName(name, url) {
     return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 var id = getParameterByName('id');
-
+if (id == null || id == "")
+{
+	window.alert("User not found");
+	return;
+}
 var coinsbal = "http://128.199.142.235/Stuff/coins/" + id + ".txt"
 var gamblecount = "http://128.199.142.235/Stuff/gamble/count/" + id + ".txt"
 var caught = "http://128.199.142.235/Stuff/pokemon/caught/" + id + ".txt"
@@ -33,8 +37,9 @@ try
 }
 catch(woah)
 {
-document.getElementById('caught').textContent = "null";
+document.getElementById('caught').textContent = "0";
 }
+document.getElementById('tableprogress').style = "width: 20%";
 	try
 	{
 	    var rawFile = new XMLHttpRequest();
@@ -53,8 +58,9 @@ document.getElementById('caught').textContent = "null";
     rawFile.send(null);
 	}catch(woah)
 {
-document.getElementById('pokeballs').textContent = "null";
+document.getElementById('pokeballs').textContent = "6 (Default)";
 }
+document.getElementById('tableprogress').style = "width: 40%";
 try
 {
 	var rawFile = new XMLHttpRequest();
@@ -73,8 +79,9 @@ try
     rawFile.send(null);
 }catch(woah)
 {
-document.getElementById('coinsbal').textContent = "null";
+document.getElementById('coinsbal').textContent = "Not Created";
 }
+document.getElementById('tableprogress').style = "width: 60%";
 try
 {
 		var rawFile = new XMLHttpRequest();
@@ -93,23 +100,24 @@ try
     rawFile.send(null);
 }catch(woah)
 {
-document.getElementById('gamblecount').textContent = "null";
+document.getElementById('gamblecount').textContent = "0";
 }
-if (id == null || id == "")
-{
-	window.alert("User not found");
-	return;
-}
+document.getElementById('tableprogress').style = "width: 80%";
                 $.ajax({
                     url: "http://128.199.142.235/Stuff/users/" + id + ".json",
                     dataType: "text",
                     success: function(data) {
                     var json = $.parseJSON(data);
-					document.getElementById('name').textContent = json.name + "'s Stats";
-					document.getElementById('description').Content = json.name + "'s Stats";
-					document.getElementById('title').textContent = json.name + "'s Stats";
+					document.getElementById('name').textContent = json.name + "'s Profile";
+					document.getElementById('description').Content = json.name + "'s Profile";
+					document.getElementById('title').textContent = "PikaBot01 - " + json.name + "'s Profile";
 					document.getElementById('avatar').src = json.avatar;
 					}
 				}
 				);
+document.getElementById('tableprogress').style = "width: 100%";
+document.getElementById('tableprogress').style = "display: none;";
+document.getElementById('tableload').style = "display: none;";
+document.getElementById('imBLIND').style = "display: none;";
+Materialize.showStaggeredList('#fancy')
 }

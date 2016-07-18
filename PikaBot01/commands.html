@@ -1,79 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>PikaDude - PikaBot01 - Commands</title>
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="source/materialize/materialize.min.css"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>PikaBot01 - Commands</title>
 <style>
 @font-face {
   font-family: 'Joystix';
   src: url('source/fonts/joystix.ttf');
 }
 @font-face {
-  font-family: 'DejaVuSerif';
-  src: url('source/fonts/DejaVuSerif.ttf');
+  font-family: 'Roboto';
+  src: url('source/fonts/Roboto.ttf');
 }
-body {margin:0;}
-
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #4d4d4d;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-}
-
-li {
-    float: left;
-}
-
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-li a:hover:not(.active) {
-    background-color: #262626;
-}
-
-.active {
-    background-color: #0066ff;
-}
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-th, td {
-    padding: 5px;
-}
-html{
-	background:url('source/images/background.jpg') no-repeat center center;
-	min-height:100%;
-	background-size:cover;
-}
-body{
-	min-height:100%;
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 </style>
 <link rel="icon" href="source/images/icon.ico">
-<a href="../index.html" style="font-family: 'Joystix' "><<-- Back to index</a>
+<a class="waves-effect waves-light btn" style="margin: 2px 2px;"><i class="material-icons left">info</i>Back To Index</a></head>
 <meta name="description" content="The official command list of PikaBot01. What else did you expect this to say?!">
 <meta name="keywords" content="pikadude, pikadude01, pikabot01, pika, dude">
 </head>
 <body>
-<ul>
-  <li><a href="home.html" style="font-family: 'DejaVuSerif'">Home</a></li>
-  <li><a class="active" href="commands.html" style="font-family: 'DejaVuSerif'">Commands</a></li>
-  <li><a href="https://discord.gg/012P7BEh4fzkryZ6P" style="font-family: 'DejaVuSerif'">Support</a></li>
-  <li><a href="https://discordapp.com/oauth2/authorize?&client_id=169678426360381451&scope=bot" style="font-family: 'DejaVuSerif'">Add PikaBot01 To Your Server</a></li>
-</ul>
-<h1 style="text-align:center; font-size:350%; font-family: 'DejaVuSerif'">PikaBot01</h1>
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="source/materialize/materialize.min.js"></script>
+<script src="source/scripts/search.js"></script>
+  <div class="fixed-action-btn horizontal click-to-toggle noselect" style="bottom: 45px; right: 24px;">
+    <a class="btn-floating btn-large red">
+      <i title="Click to open the menu" class="tooltipped material-icons" data-position="top" data-delay="200" data-tooltip="Menu">menu</i>
+    </a>
+    <ul>
+      <li><a href="home.html" title="Home" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Home">home</i></a></li>
+      <li><a href="commands.html" title="Command List" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Command List">list</i></a></li>
+      <li><a href="https://discordapp.com/oauth2/authorize?&client_id=169678426360381451&scope=bot" title="Add PikaBot01 To Your Server" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Add PikaBot01 To Your Server">add</i></a></li>
+      <li><a href="https://discord.gg/012P7BEh4fzkryZ6P" title="Join PikaBot01's Official Discord Server" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Join PikaBot01's Official Discord Server">chat</i></a></li>
+	  <li><a onclick="swag()" title="Profile (Beta)" class="btn-floating red"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Profile (Beta)">account_box</i></a></li>
+    </ul>
+  </div>
+<h1 style="text-align:center; font-size:350%; font-family: 'Roboto'">PikaBot01</h1>
 <img style="margin: 0px auto; display:block" src="source/images/PikaBot01.jpg" alt="PikaBot01" width="128" height="128" align="top"></img>
-<p style="text-align:center; font-size:175%; font-family: 'DejaVuSerif'">A Bot For <a href="http://discordapp.com"><img src="source/images/Discord-Logo.png" alt="Discord Logo" width="133" height="32.5" align="top"></img></a></h1>
+<p style="text-align:center; font-size:175%; font-family: 'Roboto'">A Bot For <a href="http://discordapp.com"><img src="source/images/Discord-Logo.png" alt="Discord Logo" width="133" height="32.5" align="top"></img></a></h1>
 <br>
 <br>
 <table style="width:100%">
@@ -313,18 +286,12 @@ body{
   </tr>
 </table>
   <br>
-  <a href="https://discord.gg/012P7BEh4fzkryZ6P" style="text-align:center; font-size:175%; font-family: 'DejaVuSerif'">If you need any help, feel free to visit the Official PikaBot01 Discord Server!</a>
+  <a href="https://discord.gg/012P7BEh4fzkryZ6P" style="text-align:center; font-size:175%; font-family: 'Roboto'">If you need any help, feel free to visit the Official PikaBot01 Discord Server!</a>
   <br>
   <br>
   <br>
   <br>
   <br>
   <br>
-  <script id="_wau1rc">var _wau = _wau || [];
-_wau.push(["tab", "wrw1764086j4", "1rc", "bottom-right"]);
-(function() {var s=document.createElement("script"); s.async=true;
-s.src="http://widgets.amung.us/tab.js";
-document.getElementsByTagName("head")[0].appendChild(s);
-})();</script>
 </body>
 </html>
