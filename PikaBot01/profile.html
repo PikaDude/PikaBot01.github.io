@@ -40,10 +40,19 @@
   top: 50%;
   transform: translateY(-50%);
 }
+.textisswag
+{
+  position: relative;
+  top: 70%;
+  transform: translateY(-70%);
+}
 </style>
 <div id="imBLIND" class="dimScreen">
   <div id="tableload" class="progress LOADIN" style="width: 90%; margin:10px auto;">
       <div id="tableprogress" class="determinate" style="width: 0%"></div>
+  </div>
+  <div style="text-align: center;" class="textisswag">
+  <a style="font-size:350%; font-family: 'Roboto'" id="number">0%</a>
   </div>
 </div>
 <link rel="icon" href="source/images/icon.ico">
@@ -57,14 +66,14 @@
 <script src="source/scripts/cri.js"></script>
   <div class="fixed-action-btn horizontal click-to-toggle noselect" style="bottom: 45px; right: 24px;">
     <a class="btn-floating btn-large red">
-      <i title="Click to open the menu" class="tooltipped material-icons" data-position="top" data-delay="200" data-tooltip="Menu">menu</i>
+      <i class="tooltipped material-icons" data-position="top" data-delay="200" data-tooltip="Menu">menu</i>
     </a>
     <ul>
-      <li><a href="home.html" title="Home" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Home">home</i></a></li>
-      <li><a href="commands.html" title="Command List" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Command List">list</i></a></li>
-      <li><a href="https://discordapp.com/oauth2/authorize?&client_id=169678426360381451&scope=bot" title="Add PikaBot01 To Your Server" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Add PikaBot01 To Your Server">add</i></a></li>
-      <li><a href="https://discord.gg/012P7BEh4fzkryZ6P" title="Join PikaBot01's Official Discord Server" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Join PikaBot01's Official Discord Server">chat</i></a></li>
-	  <li><a onclick="swag()" title="Profile (Beta)" class="btn-floating red"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Profile (Beta)">account_box</i></a></li>
+      <li><a href="home.html" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Home">home</i></a></li>
+      <li><a href="commands.html" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Command List">list</i></a></li>
+      <li><a href="https://discordapp.com/oauth2/authorize?&client_id=169678426360381451&scope=bot" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Add PikaBot01 To Your Server">add</i></a></li>
+      <li><a href="https://discord.gg/012P7BEh4fzkryZ6P" class="btn-floating blue"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Join PikaBot01's Official Discord Server">chat</i></a></li>
+	  <li><a onclick="swag()" class="btn-floating red"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Profile (Beta)">account_box</i></a></li>
     </ul>
   </div>
 <ul id="fancy">

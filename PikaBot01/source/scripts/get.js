@@ -40,6 +40,7 @@ catch(woah)
 document.getElementById('caught').textContent = "0";
 }
 document.getElementById('tableprogress').style = "width: 20%";
+document.getElementById('number').textContent = "20%";
 	try
 	{
 	    var rawFile = new XMLHttpRequest();
@@ -61,6 +62,7 @@ document.getElementById('tableprogress').style = "width: 20%";
 document.getElementById('pokeballs').textContent = "6 (Default)";
 }
 document.getElementById('tableprogress').style = "width: 40%";
+document.getElementById('number').textContent = "40%";
 try
 {
 	var rawFile = new XMLHttpRequest();
@@ -82,6 +84,7 @@ try
 document.getElementById('coinsbal').textContent = "Not Created";
 }
 document.getElementById('tableprogress').style = "width: 60%";
+document.getElementById('number').textContent = "60%";
 try
 {
 		var rawFile = new XMLHttpRequest();
@@ -103,6 +106,7 @@ try
 document.getElementById('gamblecount').textContent = "0";
 }
 document.getElementById('tableprogress').style = "width: 80%";
+document.getElementById('number').textContent = "80%";
                 $.ajax({
                     url: "http://128.199.142.235/Stuff/users/" + id + ".json",
                     dataType: "text",
@@ -116,6 +120,7 @@ document.getElementById('tableprogress').style = "width: 80%";
 				}
 				);
 document.getElementById('tableprogress').style = "width: 100%";
+document.getElementById('number').textContent = "100%";
 document.getElementById('tableprogress').style = "display: none;";
 document.getElementById('tableload').style = "display: none;";
 document.getElementById('imBLIND').style = "display: none;";
