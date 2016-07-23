@@ -5,7 +5,7 @@ window.onload = function() {
 
     var songs = [
       ['Sad Violin (Airhorn Edition)', '/404/sauce/music/Sad Violin (Airhorn Edition).mp3'],
-	  ['Dean Singing Terribly (https://twitter.com/deansheather1) Note: Will Take A While To Load', '/404/sauce/music/dean1.mp3'],
+	  ['Dean Singing Terribly (https://twitter.com/deansheather1)', '/404/sauce/music/dean1.mp3'],
 	  ['Rick Astley - Never Gonna Give You Up', '/404/sauce/music/Rickroll.mp3'],
 	  ['Undertale Soundtrack - Dogsong', '/404/sauce/music/Dogsong.mp3'],
 	  ['Sad Violin', '/404/sauce/music/Sad Violin.mp3'],
