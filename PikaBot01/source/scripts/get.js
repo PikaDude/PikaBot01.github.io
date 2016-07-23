@@ -11,13 +11,35 @@ function getParameterByName(name, url) {
 var id = getParameterByName('id');
 if (id == null || id == "")
 {
-	window.alert("User not found");
+	document.getElementById('number').textContent = "Failed To Load: Invalid User"
+	return;
+}
+try
+{
+                $.ajax({
+                    url: "http://128.199.142.235/Stuff/users/" + id + ".json",
+                    dataType: "text",
+                    success: function(data) {
+                    var json = $.parseJSON(data);
+					document.getElementById('name').textContent = json.name;
+					document.getElementById('description').Content = json.name + "'s Profile";
+					document.getElementById('title').textContent = "PikaBot01 - " + json.name + "'s Profile";
+					document.getElementById('avatar').src = json.avatar;
+					document.getElementById('discrim').textContent = "#" + json.discrim;
+					}
+				}
+				);
+}
+catch (woah)
+{
+    document.getElementById('number').textContent = "Failed To Load: User Not Found"
 	return;
 }
 var coinsbal = "http://128.199.142.235/Stuff/coins/" + id + ".txt"
 var gamblecount = "http://128.199.142.235/Stuff/gamble/count/" + id + ".txt"
 var caught = "http://128.199.142.235/Stuff/pokemon/caught/" + id + ".txt"
 var pokeballs = "http://128.199.142.235/Stuff/pokemon/pokeballs/" + id + ".txt"
+var bio = "http://128.199.142.235/Stuff/bio/" + id + ".txt"
 try
 {
     var rawFile = new XMLHttpRequest();
@@ -105,20 +127,28 @@ try
 {
 document.getElementById('gamblecount').textContent = "0";
 }
+try
+	{
+	    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", bio, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+				document.getElementById('bio').textContent = allText;
+            }
+        }
+    }
+    rawFile.send(null);
+}catch(woah)
+{
+document.getElementById('bio').textContent = "User has not set a bio (>profile setbio I am cool)";
+}
 document.getElementById('tableprogress').style = "width: 80%";
 document.getElementById('number').textContent = "80%";
-                $.ajax({
-                    url: "http://128.199.142.235/Stuff/users/" + id + ".json",
-                    dataType: "text",
-                    success: function(data) {
-                    var json = $.parseJSON(data);
-					document.getElementById('name').textContent = json.name + "'s Profile";
-					document.getElementById('description').Content = json.name + "'s Profile";
-					document.getElementById('title').textContent = "PikaBot01 - " + json.name + "'s Profile";
-					document.getElementById('avatar').src = json.avatar;
-					}
-				}
-				);
 document.getElementById('tableprogress').style = "width: 100%";
 document.getElementById('number').textContent = "100%";
 document.getElementById('tableprogress').style = "display: none;";

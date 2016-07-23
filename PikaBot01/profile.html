@@ -46,6 +46,27 @@
   top: 70%;
   transform: translateY(-70%);
 }
+.center
+{
+     margin: 0 auto;
+     width: 100px;
+}
+html{
+	background:url('source/backgrounds/beach.png') no-repeat center center;
+	min-height:100%;
+	background-size:cover;
+}
+.fancyboxthing
+{
+background: rgba(255, 255, 255, 0.5);
+}
+.wrap { 
+   white-space: pre-wrap;      /* CSS3 */   
+   white-space: -moz-pre-wrap; /* Firefox */    
+   white-space: -pre-wrap;     /* Opera <7 */   
+   white-space: -o-pre-wrap;   /* Opera 7 */    
+   word-wrap: break-word;      /* IE */
+}
 </style>
 <div id="imBLIND" class="dimScreen">
   <div id="tableload" class="progress LOADIN" style="width: 90%; margin:10px auto;">
@@ -78,17 +99,28 @@
   </div>
 <ul id="fancy">
 <li style="opacity: 0">
-<div style="text-align: center;">
-<span style="font-size:350%; font-family: 'Roboto'" id="name"></span>
-<span style="font-size:10px; font-family: 'Roboto'">Beta</span>
-</div>
-<img style="margin: 0px auto; display:block" id="avatar" width="128" height="128" align="top"></img>
-<title id="title"></title>
+<div class="center fancyboxthing" style="width: 800px; height: 250px;">
+<img id="avatar" width="250" height="250" style="float: left; padding: 25px 25px;"></img>
+<p style="font-size:350%; font-family: 'Roboto'; float: left; padding: 12.5px 5px; display: inline-block; margin: auto -10px; width: 0px" id="name"></p>
 <br>
-<h2 style="margin: 2px 2px; font-family: 'Roboto'">Stats Table</h2>
-<div id="table">
-<table class="bordered highlight">
-<thead><tr><th>Coin/Gamble Stats</th></tr></thead>
+<br>
+<p id="discrim" class="left-align" style="font-size: 15px; font-family: 'Roboto'; color: grey; float: left; line-height: 300%; width: 0px"></p>
+<br>
+<br>
+<p id="bio" class="left-align wrap" style="overflow: hidden"></p>
+</div>
+<title id="title"></title>
+<br><br><br><br><br>
+<!--Shut up, it works -->
+<div id="table" class="center fancyboxthing" style="width: 1200px;">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#test1">Stats Table</a></li>
+      </ul>
+    </div>
+<div id="woo" style="padding: 20px 20px">
+<table class="bordered">
+<thead><tr><th style="font-size: 120%">Coin/Gamble Stats</th></tr></thead>
 <tbody>
 <tr><td>Coins Balance</td><td id="coinsbal"></td></tr>
 <tr><td>Gamble Count</td><td id="gamblecount"></td></tr>
@@ -101,6 +133,7 @@
 </table>
 </div>
 <p style="margin: 2px 2px; font-family: 'Roboto'" >Note: Not all stats will update instantly</p>
+</div>
 </li>
 </ul>
 <br>
