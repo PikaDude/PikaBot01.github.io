@@ -51,11 +51,6 @@
      margin: 0 auto;
      width: 100px;
 }
-html{
-	background:url('source/backgrounds/beach.png') no-repeat center center;
-	min-height:100%;
-	background-size:cover;
-}
 .fancyboxthing
 {
 background: rgba(255, 255, 255, 0.5);
@@ -82,7 +77,7 @@ background: rgba(255, 255, 255, 0.5);
 <body>
 <script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
 <script type="text/javascript" src="source/materialize/materialize.min.js"></script>
-<script src="source/scripts/get.js"></script>
+<script src="source/scripts/get2.js"></script>
 <script src="source/scripts/search.js"></script>
 <script src="source/scripts/cri.js"></script>
   <div class="fixed-action-btn horizontal click-to-toggle noselect" style="bottom: 45px; right: 24px;">
@@ -97,7 +92,9 @@ background: rgba(255, 255, 255, 0.5);
 	  <li><a onclick="swag()" class="btn-floating red"><i class="material-icons tooltipped" data-position="top" data-delay="200" data-tooltip="Profile (Beta)">account_box</i></a></li>
     </ul>
   </div>
+<body id="dankmemes">
 <ul id="fancy">
+<p id="weed"></p>
 <li style="opacity: 0">
 <div class="center fancyboxthing" style="width: 800px; height: 250px;">
 <img id="avatar" width="250" height="250" style="float: left; padding: 25px 25px;"></img>
@@ -115,10 +112,11 @@ background: rgba(255, 255, 255, 0.5);
 <div id="table" class="center fancyboxthing" style="width: 1200px;">
     <div class="col s12">
       <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#test1">Stats Table</a></li>
+        <li class="tab col s3"><a class="active" href="#stats">Stats Table</a></li>
+		<li class="tab col s3"><a href="#pants">Don't Shit Your Pants Awards</a></li>
       </ul>
     </div>
-<div id="woo" style="padding: 20px 20px">
+<div id="stats" style="padding: 20px 20px" class="col s12">
 <table class="bordered">
 <thead><tr><th style="font-size: 120%">Coin/Gamble Stats</th></tr></thead>
 <tbody>
@@ -131,8 +129,26 @@ background: rgba(255, 255, 255, 0.5);
 <tr><td>Pokeballs</td><td id="pokeballs"></td></tr>
 </tbody>
 </table>
-</div>
 <p style="margin: 2px 2px; font-family: 'Roboto'" >Note: Not all stats will update instantly</p>
+</div>
+<!--poop-->
+<div id="pants" style="padding: 20px 20px" class="col s12">
+<table class="bordered">
+<thead><tr><th style="font-size: 120%">Don't Shit Your Pants Awards Table</th></tr></thead>
+<tbody>
+<tr><td>Thinking (and shitting) inside the box</td><td class="right-align" id="pants1"></td></tr>
+<tr><td>Mr. Efficient</td><td class="right-align" id="pants2"></td></tr>
+<tr><td>Shitting 101</td><td class="right-align" id="pants3"></td></tr>
+<tr><td>So close and yet so far...</td><td class="right-align" id="pants4"></td></tr>
+<tr><td>Sep-poo-ku</td><td class="right-align" id="pants5"></td></tr>
+<tr><td>Holding off the inevitable</td><td class="right-align" id="pants6"></td></tr>
+<tr><td>The inevitable</td><td class="right-align" id="pants7"></td></tr>
+<tr><td>Shitting at the starting gun</td><td class="right-align" id="pants8"></td></tr>
+<tr><td>Final Award: You are the shit king!</td><td class="right-align" id="pants9"></td></tr>
+</tbody>
+</table>
+<p style="margin: 2px 2px; font-family: 'Roboto'" >Note: Not all stats will update instantly</p>
+</div>
 </div>
 </li>
 </ul>

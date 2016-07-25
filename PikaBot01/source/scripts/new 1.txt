@@ -1,0 +1,1 @@
+minecraft:tellraw @a [\"\",{\"text\":\"|| \",\"color\":\"gray\",\"bold\":true},{\"text\":\"Discord \",\"color\":\"dark_purple\",\"bold\":false},{\"text\":\"|| \",\"color\":\"gray\",\"bold\":true},{\"text\":\"" + e.Message.User.Name + "\",\"color\":\"white\",\"bold\":false},{\"text\":\" > \",\"color\":\"gray\"},{\"text\":\"" + e.Message.Text + "\",\"color\":\"white\"}]
