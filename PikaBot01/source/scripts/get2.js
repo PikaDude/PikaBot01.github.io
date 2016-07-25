@@ -14,8 +14,28 @@ if (id == null || id == "")
 	document.getElementById('number').textContent = "Invalid User"
 	return;
 }
+function FileExists(urlToFile)
+{
+    var xhr = new XMLHttpRequest();
+    xhr.open("GET", urlToFile, false);
+    xhr.send();
+     
+    if (xhr.status == "404") {
+        return false;
+    } else {
+        return true;
+    }
+}
 try
 {
+	if (FileExists("http://pikabot01.xyz/Stuff/users/" + id + ".json"))
+	{}
+}catch (woah)
+{
+    document.getElementById('number').textContent = "User Not Found"
+	return;
+}
+
                 $.ajax({
                     url: "http://pikabot01.xyz/Stuff/users/" + id + ".json",
                     dataType: "text",
@@ -29,12 +49,6 @@ try
 					}
 				}
 				);
-}
-catch (woah)
-{
-    document.getElementById('number').textContent = "User Not Found"
-	return;
-}
 document.getElementById('tableprogress').style = "width: 6%";
 document.getElementById('number').textContent = "6%";
 var coinsbal = "http://pikabot01.xyz/Stuff/coins/" + id + ".txt"
@@ -62,35 +76,23 @@ function get(file)
     rawFile.send(null);
 	return rawFile.responseText;
 }
-function FileExists(urlToFile)
-{
-    var xhr = new XMLHttpRequest();
-    xhr.open("GET", urlToFile, false);
-    xhr.send();
-     
-    if (xhr.status == "404") {
-        return false;
-    } else {
-        return true;
-    }
-}
-document.getElementById('caught').textContent = get(caught);
+try {document.getElementById('caught').textContent = get(caught);} catch (woah) {document.getElementById('caught').textContent = "0";}
 document.getElementById('tableprogress').style = "width: 12%";
 document.getElementById('number').textContent = "12%";
-document.getElementById('pokeballs').textContent = get(pokeballs);
+try {document.getElementById('pokeballs').textContent = get(pokeballs);} catch (woah) {document.getElementById('pokeballs').textContent = "6 (Default)";}
 document.getElementById('tableprogress').style = "width: 18%";
 document.getElementById('number').textContent = "18%";
-document.getElementById('coinsbal').textContent = get(coinsbal);
+try {document.getElementById('coinsbal').textContent = get(coinsbal);} catch (woah) {document.getElementById('coinsbal').textContent = "Not Created";}
 document.getElementById('tableprogress').style = "width: 24%";
 document.getElementById('number').textContent = "24%";
-document.getElementById('gamblecount').textContent = get(gamblecount);
+try {document.getElementById('gamblecount').textContent = get(gamblecount);} catch (woah) {document.getElementById('gamblecount').textContent = "0";}
 document.getElementById('tableprogress').style = "width: 30%";
 document.getElementById('number').textContent = "30%";
-document.getElementById('bio').textContent = get(bio);
+try {document.getElementById('bio').textContent = get(bio);} catch (woah) {document.getElementById('bio').textContent = "I am a very anonymous user..";}
 document.getElementById('tableprogress').style = "width: 36%";
 document.getElementById('number').textContent = "36%";
-var backgroundurl = "http://pikabot01.xyz/Stuff/background-images/" + get(background);
-document.getElementById('dankmemes').style = "background:url(" + backgroundurl + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
+try {var backgroundurl = "http://pikabot01.xyz/Stuff/background-images/" + get(background);
+document.getElementById('dankmemes').style = "background:url(" + backgroundurl + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";} catch (woah) {}
 document.getElementById('tableprogress').style = "width: 42%";
 document.getElementById('number').textContent = "42%";
 //
