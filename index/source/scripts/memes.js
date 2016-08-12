@@ -20,6 +20,10 @@ window.onload = function() {
 		obj = JSON.parse(oldest).data;
 	var old = parseInt(obj);
 	var neww = old + 1;
-	document.getElementById('count').textContent = neww;
-	$.post("https://bucket.tk/api/data/953e5ae8-6e7f-4071-a8fe-1e45e1490926",neww.ToString);
-}
+fetch("https://bucket.tk/api/data/953e5ae8-6e7f-4071-a8fe-1e45e1490926", {method: 'POST', headers: new Headers({'Content-Type': 'application/json'}), body: '{"data":"' + neww + '"}'}).then(function(response) {
+  return response.json();
+}).then(function(data) {
+  console.log(data);
+}).catch(function(err) {
+  console.log(err);
+});}
