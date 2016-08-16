@@ -7,7 +7,10 @@
 <title>DISCORD BOTS IN YO BROWSER</title>
 </head>
 <body>
+<img id="img" src="" style="float: left; padding: 10px 10px"></img>
 <h2 style="padding: 10px 10px">Discord Bots In Yo Browser</h2>
+<link id="icon" rel="icon" href="">
+<p id="users" style="padding: 10px 10px">loading memes...</p>
 <div id="table" class="fancyboxthing" style="width: 1200px; padding: 10px 10px">
     <div class="col s12">
       <ul class="tabs">
@@ -35,6 +38,13 @@
 </div>
 </div>
 <script>
+function update0() {
+  $.get("http://pikabot01.xyz/wow/110373943822540800-count.txt", function(data) {
+    document.getElementById('users').textContent = data + " Users";
+    window.setTimeout(update0, 1000);
+  });
+}
+update0();
 function update1() {
   $.get("http://pikabot01.xyz/wow/110373943822540800-110373943822540800.txt", function(data) {
     document.getElementById('ayy1').textContent = data;
@@ -70,6 +80,14 @@ function update5() {
   });
 }
 update5();
+function update6() {
+  $.get("http://pikabot01.xyz/wow/110373943822540800-icon.txt", function(data) {
+    document.getElementById('icon').href = data;
+	document.getElementById('img').src = data;
+    window.setTimeout(update6, 1000);
+  });
+}
+update6();
 </script>
 <body>
 </html>
