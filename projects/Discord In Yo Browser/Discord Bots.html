@@ -44,32 +44,28 @@ function update1() {
 update1();
 function update2() {
   $.get("http://pikabot01.xyz/wow/110373943822540800-110374153562886144.txt", function(data) {
-	var ayy = data.replace(/\\/g, "<br>");
-    $("#development").html(ayy);
+    document.getElementById('ayy2').textContent = data;
     window.setTimeout(update2, 1000);
   });
 }
 update2();
 function update3() {
   $.get("http://pikabot01.xyz/wow/110373943822540800-113743192305827841.txt", function(data) {
-	var ayy = data.replace(/\\/g, "<br>");
-    $("#testing1").html(ayy);
+    document.getElementById('ayy3').textContent = data;
     window.setTimeout(update3, 1000);
   });
 }
 update3();
 function update4() {
   $.get("http://pikabot01.xyz/wow/110373943822540800-132632676225122304.txt", function(data) {
-	var ayy = data.replace(/\\/g, "<br>");
-    $("#testing2").html(ayy);
+    document.getElementById('ayy4').textContent = data;
     window.setTimeout(update4, 1000);
   });
 }
 update4();
 function update5() {
   $.get("http://pikabot01.xyz/wow/110373943822540800-119222314964353025.txt", function(data) {
-	var ayy = data.replace(/\\/g, "<br>");
-    $("#woah").html(ayy);
+    document.getElementById('ayy5').textContent = data;
     window.setTimeout(update5, 1000);
   });
 }
