@@ -1,1 +1,1 @@
-#This is my website http://pikadude.github.io (have fun)
+#This is my website http://pikadude.xyz (have fun)
