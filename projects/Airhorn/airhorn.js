@@ -1,7 +1,7 @@
 var airhorn2 = 0;
 window.onload = function() {
 }
-function airhorn(){
+window.airhorn = function(){
 	if (document.getElementById('airhorn').className === "")
 	{
 	airhorn2++;
