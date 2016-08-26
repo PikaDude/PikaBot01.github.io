@@ -1,6 +1,11 @@
+var airhorn2 = 0;
+window.onload = function() {
+}
 function airhorn(){
 	if (document.getElementById('airhorn').className === "")
 	{
+	airhorn2++;
+	document.getElementById('airhorn2').textContent = airhorn2 + " Horns Air'd";
 	var airhorn = Math.floor((Math.random() * 7) + 1);
 	if (airhorn === 1){document.getElementById('airhorn').className = "shake shake-constant";}
 	if (airhorn === 2){document.getElementById('airhorn').className = "shake-hard shake-constant";}
