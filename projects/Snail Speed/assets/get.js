@@ -12,6 +12,7 @@ window.onload = function() {
 					document.getElementById('mood').textContent = json.mood;
 					document.getElementById('time').textContent = json.time;
 					document.getElementById('weather').textContent = json.weather;
+					document.getElementById('energy').textContent = json.energy;
 					var weather;
 					if (json.weather === "rain") weather = "rain.gif";
 					if (json.weather === "clear") weather = "clear.jpg";
