@@ -37,7 +37,14 @@ background-color: white;
 <div align="center">
 <img src="assets/snail.png"></img>
 </div>
-<table class="center box" style="width: 900px;">
+<div class="col s12 center" style="width: 900px">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#table">Snail Stat Table</a></li>
+        <li class="tab col s3"><a href="#webstats">Website Stat Table</a></li>
+      </ul>
+</div>
+<div class="center box" style="width: 900px; padding: 10px" id="table">
+<table class="bordered striped">
 <thead>
 <th>Statistic</th>
 <th>Value</th>
@@ -73,11 +80,46 @@ background-color: white;
 </tr>
 </tbody>
 </table>
+</div>
+<div class="center box" style="width: 900px; padding: 10px" id="webstats">
+<table class="bordered striped">
+<thead>
+<th>Statistic</th>
+<th>Value</th>
+</thead>
+<tbody>
+<tr>
+<td>Users Online</td>
+<td>
+<!-- BEGIN: Powered by Supercounters.com -->
+<script type="text/javascript" src="http://widget.supercounters.com/online_t.js"></script><script type="text/javascript">sc_online_t(1297965,"","170ddb");</script><br><noscript><a href="http://www.supercounters.com/">Free Users Online Counter</a></noscript>
+<!-- END: Powered by Supercounters.com -->
+</td>
+</tr>
+<tr>
+<td>Total View Count</td>
+<td>
+<!-- BEGIN: Powered by Supercounters.com -->
+<script type="text/javascript" src="http://widget.supercounters.com/texthit.js"></script><script type="text/javascript">var sc_texthit_var = sc_texthit_var || [];sc_text_hit(1297965,"","170ddb");</script><br><noscript><a href="http://www.supercounters.com">Tumblr Hit Counter</a></noscript>
+<!-- END: Powered by Supercounters.com -->
+</td>
+</tr>
+</table>
+<br>
+<!-- BEGIN: Powered by Supercounters.com -->
+<script type="text/javascript" src="http://widget.supercounters.com/map.js"></script><script type="text/javascript">var sc_map_var = sc_map_var || [];sc_map(1297965,"118200","ff0000",1)</script><br><noscript><a href="http://www.supercounters.com/">Visitor Map Widget</a></noscript>
+<!-- END: Powered by Supercounters.com -->
+<br>
+<script>var __v='barc-user-PikaDude';</script>
+                  <script type="text/javascript">
+                      (function(d) {
+                          var b = d.createElement("script"); b.type = "text/javascript"; b.async = true;
+                          b.src = ("https:" == d.location.protocol ? "https" : "http") + "://barc.com/js/libs/barc/barc.js";
+                          var s = d.getElementsByTagName("script")[0]; s.parentNode.insertBefore(b, s);
+                      })(document);
+                  </script>
+</div>
 <br>
 <br>
-<!-- SCM Music Player http://scmplayer.net -->
-<script type="text/javascript" src="http://scmplayer.net/script.js" 
-data-config="{'skin':'skins/scmGreen/skin.css','volume':50,'autoplay':true,'shuffle':true,'repeat':1,'placement':'top','showplaylist':false,'playlist':[{'title':'Thundersnail','url':'http://pikadude.xyz/projects/Snail%20Speed/assets/snail1.mp3'}]}" ></script>
-<!-- SCM Music Player script end -->
 </body>
 </html>
