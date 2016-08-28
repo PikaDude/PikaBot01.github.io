@@ -1,5 +1,12 @@
 window.onload = function() {
 	function snail(){
+				$.ajax({
+                    url: "http://pikabot01.xyz/snail/announce.txt",
+                    dataType: "text",
+                    success: function(poop) {
+						notification("Server Announcement: " + poop, 10000);
+									}});
+					window.setTimeout(snail, 5000);
                 $.ajax({
                     url: "http://pikabot01.xyz/snail/snail.json",
                     dataType: "text",
@@ -36,13 +43,6 @@ window.onload = function() {
 					document.getElementById('weather').textContent = weed;
 					var url = json.tiem + "_" + weather;
 					document.getElementById('snail').style = "background:url(assets/images/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
-					                $.ajax({
-                    url: "http://pikabot01.xyz/snail/announce.txt",
-                    dataType: "text",
-                    success: function(poop) {
-						notification("Server Announcement: " + poop, 10000);
-									}});
-					window.setTimeout(snail, 5000);
 					}
 				}
 				);
