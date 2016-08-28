@@ -36,33 +36,31 @@ window.onload = function() {
 					document.getElementById('weather').textContent = weed;
 					var url = json.tiem + "_" + weather;
 					document.getElementById('snail').style = "background:url(assets/images/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
-				}});
-				}
-					function announcement(){
-						$.ajax({
+					//
+											$.ajax({
                     url: "http://pikabot01.xyz/snail/announce.txt",
                     dataType: "text",
                     success: function(poop) {
 						notification("Server Announcement: " + poop, 10000);
 						memes = poop;
+										window.setTimeout(announcement, 5000);
 									}});
-	}
-	function records(){
-							$.ajax({
+									//
+																$.ajax({
                     url: "http://pikabot01.xyz/snail/newrecord.txt",
                     dataType: "text",
                     success: function(poop) {
 						notification("Achievement Get: " + poop.replace("&", " "), 10000)
 									}});
-				window.setTimeout(snail, 5000);
 											$.ajax({
                     url: "http://pikabot01.xyz/snail/records.txt",
                     dataType: "text",
                     success: function(memez) {
 						document.getElementById('1').textContent = memez.replace("&", " ");
+										window.setTimeout(records, 5000);
 											}});
-	}
-	snail();
-	announcement();
-	records();
+									window.setTimeout(snail, 5000);
+				}});
+				}
+				snail();
 }
