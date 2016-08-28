@@ -43,7 +43,6 @@ window.onload = function() {
                     success: function(poop) {
 						notification("Server Announcement: " + poop, 10000);
 						memes = poop;
-										window.setTimeout(announcement, 5000);
 									}});
 									//
 																$.ajax({
