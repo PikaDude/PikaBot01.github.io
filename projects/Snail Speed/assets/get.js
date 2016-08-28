@@ -16,6 +16,8 @@ window.onload = function() {
 					var weather;
 					if (json.weather === "rain") weather = "rain.gif";
 					if (json.weather === "clear") weather = "clear.jpg";
+					if (json.weather === "fog") weather = "fog.jpg";
+					if (json.weather === "cloudy") weather = "cloudy.jpg";
 					var url = json.tiem + "_" + weather;
 					document.getElementById('snail').style = "background:url(assets/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
 					window.setTimeout(snail, 3000);
