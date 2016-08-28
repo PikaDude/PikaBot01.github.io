@@ -13,10 +13,26 @@ window.onload = function() {
 					document.getElementById('time').textContent = json.time;
 					document.getElementById('energy').textContent = json.energy;
 					var weather;
-					if (json.weather === "rain") weather = "rain.gif"; weed = "Raining";
-					if (json.weather === "clear") weather = "clear.jpg"; weed = "Clear"
-					if (json.weather === "fog") weather = "fog.jpg"; weed = "Foggy";
-					if (json.weather === "cloudy") weather = "cloudy.jpg"; weed = "Cloudy";
+					if (json.weather === "rain")
+					{
+						weather = "rain.gif";
+						weed = "Raining";
+					}
+					if (json.weather === "clear")
+					{
+						weather = "clear.jpg";
+						weed = "Clear";
+					}
+					if (json.weather === "fog")
+					{
+						weather = "fog.jpg";
+						weed = "Foggy";
+					}
+					if (json.weather === "cloudy")
+					{
+						weather = "cloudy.jpg";
+						weed = "Cloudy";
+					}
 					document.getElementById('weather').textContent = weed;
 					var url = json.tiem + "_" + weather;
 					document.getElementById('snail').style = "background:url(assets/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
