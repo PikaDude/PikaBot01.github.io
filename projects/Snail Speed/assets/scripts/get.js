@@ -35,8 +35,8 @@ window.onload = function() {
 					}
 					document.getElementById('weather').textContent = weed;
 					var url = json.tiem + "_" + weather;
-					document.getElementById('snail').style = "background:url(assets/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
-					window.setTimeout(snail, 3000);
+					document.getElementById('snail').style = "background:url(assets/images/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
+					window.setTimeout(snail, 10000);
 					}
 				}
 				);
