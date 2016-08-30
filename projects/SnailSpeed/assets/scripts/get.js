@@ -1,5 +1,7 @@
 window.onload = function() {
 	function snail(){
+		try
+		{
                 $.ajax({
                     url: "http://pikabot01.xyz/snail/snail.json",
                     dataType: "text",
@@ -40,7 +42,7 @@ window.onload = function() {
 											$.ajax({
                     url: "http://pikabot01.xyz/snail/announce.txt",
                     dataType: "text",
-                    success: function(poop) {
+					  success: function(poop) {
 						notification("Server Announcement: " + poop, 10000);
 						memes = poop;
 									}});
@@ -48,7 +50,7 @@ window.onload = function() {
 																$.ajax({
                     url: "http://pikabot01.xyz/snail/newrecord.txt",
                     dataType: "text",
-                    success: function(poop) {
+					  success: function(poop) {
 						notification("Achievement Get: " + poop.replace("&", " "), 10000)
 									}});
 											$.ajax({
@@ -60,6 +62,9 @@ window.onload = function() {
 											}});
 									window.setTimeout(snail, 5000);
 				}});
-				}
+		}catch(Exception)
+		{
+			console.log("the code")
+		}}
 				snail();
 }
