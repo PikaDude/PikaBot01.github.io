@@ -1,70 +1,64 @@
 window.onload = function() {
-	function snail(){
-		try
-		{
+    function snail() {
+        $.ajax({
+            url: "http://pikabot01.xyz/snail/snail.json",
+            dataType: "text",
+            success: function(data) {
+                var json = $.parseJSON(data);
+                document.getElementById('total').textContent = json.distance + " millimetres or " + parseInt(json.distance) / 10 + " centimetres or " + parseInt(json.distance) / 10 / 100 + " metres";
+                document.getElementById('uptime').textContent = json.uptime;
+                document.getElementById('status').textContent = json.status;
+                document.getElementById('speed').textContent = json.speed;
+                document.getElementById('mood').textContent = json.mood;
+                document.getElementById('time').textContent = json.time;
+                document.getElementById('energy').textContent = json.energy;
+                var weather;
+                if (json.weather === "rain") {
+                    weather = "rain.gif";
+                    weed = "Raining";
+                }
+                if (json.weather === "clear") {
+                    weather = "clear.jpg";
+                    weed = "Clear";
+                }
+                if (json.weather === "fog") {
+                    weather = "fog.jpg";
+                    weed = "Foggy";
+                }
+                if (json.weather === "cloudy") {
+                    weather = "cloudy.jpg";
+                    weed = "Cloudy";
+                }
+                document.getElementById('weather').textContent = weed;
+                var url = json.tiem + "_" + weather;
+                document.getElementById('snail').style = "background:url(assets/images/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
                 $.ajax({
-                    url: "http://pikabot01.xyz/snail/snail.json",
+                    url: "http://pikabot01.xyz/snail/log.json",
                     dataType: "text",
-                    success: function(data) {
-                    var json = $.parseJSON(data);
-					document.getElementById('total').textContent = json.distance + " millimetres or " + parseInt(json.distance) / 10 + " centimetres or " + parseInt(json.distance) / 10 / 100 + " metres";
-					document.getElementById('uptime').textContent = json.uptime;
-					document.getElementById('status').textContent = json.status;
-					document.getElementById('speed').textContent = json.speed;
-					document.getElementById('mood').textContent = json.mood;
-					document.getElementById('time').textContent = json.time;
-					document.getElementById('energy').textContent = json.energy;
-					var weather;
-					if (json.weather === "rain")
-					{
-						weather = "rain.gif";
-						weed = "Raining";
-					}
-					if (json.weather === "clear")
-					{
-						weather = "clear.jpg";
-						weed = "Clear";
-					}
-					if (json.weather === "fog")
-					{
-						weather = "fog.jpg";
-						weed = "Foggy";
-					}
-					if (json.weather === "cloudy")
-					{
-						weather = "cloudy.jpg";
-						weed = "Cloudy";
-					}
-					document.getElementById('weather').textContent = weed;
-					var url = json.tiem + "_" + weather;
-					document.getElementById('snail').style = "background:url(assets/images/" + url + ") no-repeat center center fixed; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover;";
-					//
-											$.ajax({
+                    success: function(poop) {
+                        var jason = $.parseJSON(poop);
+                        var i = 1,
+                            dataSize = jason.length;
+							var that = "";
+							                            that = that + "[" + jason[i].time + "]" + jason[i].sender + ": " + jason[i].event;
+                        for (i; i < dataSize; i++) {
+                            that = that + "\n[" + jason[i].time + "]" + jason[i].sender + ": " + jason[i].event;
+                        }
+						document.getElementById('logs').textContent = that;
+                    }
+                });
+                //
+                $.ajax({
                     url: "http://pikabot01.xyz/snail/announce.txt",
                     dataType: "text",
-					  success: function(poop) {
-						notification("Server Announcement: " + poop, 10000);
-						memes = poop;
-									}});
-									//
-																$.ajax({
-                    url: "http://pikabot01.xyz/snail/newrecord.txt",
-                    dataType: "text",
-					  success: function(poop) {
-						notification("Achievement Get: " + poop.replace("&", " "), 10000)
-									}});
-											$.ajax({
-                    url: "http://pikabot01.xyz/snail/records.txt",
-                    dataType: "text",
-                    success: function(memez) {
-						document.getElementById('1').textContent = memez.replace("&", " ");
-										window.setTimeout(records, 5000);
-											}});
-									window.setTimeout(snail, 5000);
-				}});
-		}catch(Exception)
-		{
-			console.log("the code")
-		}}
-				snail();
+                    success: function(poop) {
+                        notification("Server Announcement: " + poop, 10000);
+                        memes = poop;
+                    }
+                });
+                window.setTimeout(snail, 5000);
+            }
+        });
+    }
+    snail();
 }
