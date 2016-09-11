@@ -39,12 +39,12 @@ window.onload = function() {
                         var jason = $.parseJSON(poop);
                         var i = 1,
                             dataSize = jason.length;
-							var that = "";
-							                            that = that + "[" + jason[i].time + "]" + jason[i].sender + ": " + jason[i].event;
+                        var that = "";
+                        that = that + "[" + jason[i].time + "]" + jason[i].sender + ": " + jason[i].event;
                         for (i; i < dataSize; i++) {
                             that = that + "\n[" + jason[i].time + "]" + jason[i].sender + ": " + jason[i].event;
                         }
-						document.getElementById('logs').textContent = that;
+                        document.getElementById('logs').textContent = that;
                     }
                 });
                 //
