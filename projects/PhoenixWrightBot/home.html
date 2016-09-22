@@ -3,6 +3,11 @@
 <head>
 <title>Phoenix Wright Discord Bot - Home</title>
 <style>
+.center
+{
+     margin: 0 auto;
+     width: 100px;
+}
 /* The popup (background) */
 .popup {
     display: none; /* Hidden by default */
@@ -83,11 +88,6 @@ html {
   font-family: 'Ace Attorney';
   src: url('assets/fonts/Ace Attorney.ttf');
 }
-.center
-{
-     margin: 0 auto;
-     width: 100px;
-}
 #spinner .spinner {
   display: block;
   position: fixed;
@@ -128,6 +128,45 @@ html {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 500px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: 'Â»';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 25px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 </style>
 <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <link type="text/css" rel="stylesheet" href="assets/materialize/materialize.min.css"  media="screen,projection"/>
@@ -144,7 +183,6 @@ html {
         <li class="tab col s3"><a class="active" href="#home" style="font-family: Ace Attorney; font-size:18px;">Home</a></li>
         <li class="tab col s3"><a href="#commands" style="font-family: Ace Attorney; font-size:18px;">Commands</a></li>
         <li class="tab col s3"><a href="#objections" style="font-family: Ace Attorney; font-size:18px;">Objections</a></li>
-        <li class="tab col s3"><a id="openPopup" href="#add" style="font-family: Ace Attorney; font-size:18px; cursor: pointer">Add</a></li>
       </ul>
     </div>
 <div style="padding: 10px 10px">
@@ -155,7 +193,7 @@ html {
 </div>
 <div style="padding: 10px 10px;" id="home">
 <p style="font-size:30px; font-family: Ace Attorney;" align="center">Phoenix Wright is a bot created for Discord, a free talk and text app<br>Phoenix Wright can create animated objection gifs within a matter of seconds like this one:</p>
-<p align="center"><img id="exampleGif" src="http://pikabot01.xyz/ImAlwaysWright/228101516672630784.gif" width="500px"></img><i class="material-icons" onclick="repeatGif();" style="cursor: pointer;" title="Repeat?">loop</i></p>
+<p align="center"><img id="exampleGif" src="http://pikabot01.xyz/ImAlwaysWright/228101516672630784.gif" width="500px"></img><br><i class="material-icons" onclick="repeatGif();" style="cursor: pointer;" title="Repeat?">loop</i></p>
 <div id="THESPINNER"><div id="spinner"><div class="spinner" role="spinner"><div class="spinner-icon"></div></div></div></div>
 <p style="font-size:20px; font-family: Ace Attorney;" align="center">Now you can object to your friends statements!</p>
 </div>
@@ -173,49 +211,8 @@ html {
 <div id="objections">
 <p style="font-size:60px; font-family: Ace Attorney;" align="center">Coming Soon!</p>
 </div>
-<div id="add">
-<p style="font-size:60px; font-family: Ace Attorney;" align="center">Click to open in your browser</p>
+<div align="center" style="padding: 10px 10px">
+<a href="https://discordapp.com/oauth2/authorize?&client_id=226964246339125248&scope=bot" class="button" target="_blank">Add To Your Server</a>
 </div>
-<div id="thePopup" class="popup">
-  <div class="popup-content">
-    <div class="popup-header">
-      <span class="close">×</span>
-      <h4>Add to your server</h2>
-    </div>
-    <div class="popup-body">
-	 <iframe src="https://discordapp.com/oauth2/authorize?&client_id=226964246339125248&scope=bot" style="height: 450px; width: 350px; margin: auto; display:block;"></iframe> 
-    </div>
-    <div class="popup-footer">
-      <h5>Open in your browser</h3>
-    </div>
-  </div>
-</div>
-<script>
-// Get the popup
-var popup = document.getElementById('thePopup');
-
-// Get the button that opens the popup
-var btn = document.getElementById("openPopup");
-
-// Get the <span> element that closes the popup
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks the button, open the popup 
-btn.onclick = function() {
-    popup.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the popup
-span.onclick = function() {
-    popup.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the popup, close it
-window.onclick = function(event) {
-    if (event.target == popup) {
-        popup.style.display = "none";
-    }
-}
-</script>
 </body>
 </html>
