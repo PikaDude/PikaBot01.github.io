@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Phoenix Wright Discord Bot - Home</title>
+<style>
+/* The popup (background) */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* popup Content */
+.popup-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #ff3300;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-header {
+    padding: 2px 16px;
+    background-color: #f2f2f2;
+    color: black;
+}
+
+.popup-body {padding: 2px 16px;}
+
+.popup-footer {
+    padding: 2px 16px;
+    background-color: #f2f2f2;
+    color: black;
+}
+html { 
+  background: url(assets/images/background.png) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+@font-face {
+  font-family: 'Ace Attorney';
+  src: url('assets/fonts/Ace Attorney.ttf');
+}
+.center
+{
+     margin: 0 auto;
+     width: 100px;
+}
+#spinner .spinner {
+  display: block;
+  position: fixed;
+  z-index: 1031;
+  top: 15px;
+  right: 15px;
+}
+
+#spinner .spinner-icon {
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+
+  border: solid 2px transparent;
+  border-top-color: #29d;
+  border-left-color: #29d;
+  border-radius: 50%;
+
+  -webkit-animation: spinner 400ms linear infinite;
+          animation: spinner 400ms linear infinite;
+}
+
+.spinner-custom-parent {
+  overflow: hidden;
+  position: relative;
+}
+
+.spinner-custom-parent #spinner .spinner,
+.spinner-custom-parent #spinner .bar {
+  position: absolute;
+}
+
+@-webkit-keyframes spinner {
+  0%   { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
+@keyframes spinner {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+</style>
+<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="assets/materialize/materialize.min.css"  media="screen,projection"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="The homepage for the Discord Bot: Phoenix Wright">
+<meta name="keywords" content="phoenix, phoenix wright, discord, bot, ace attorney, spirit of justice, pikadude">
+<script src="https://code.jquery.com/jquery-3.0.0.min.js"></script>
+<script type="text/javascript" src="assets/materialize/materialize.min.js"></script>
+<script type="text/javascript" src="assets/scripts/gif.js"></script>
+</head>
+<body>
+    <div style="float: right; padding: 50px 0px; width: 550px" class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#home" style="font-family: Ace Attorney; font-size:18px;">Home</a></li>
+        <li class="tab col s3"><a href="#commands" style="font-family: Ace Attorney; font-size:18px;">Commands</a></li>
+        <li class="tab col s3"><a href="#objections" style="font-family: Ace Attorney; font-size:18px;">Objections</a></li>
+        <li class="tab col s3"><a id="openPopup" href="#add" style="font-family: Ace Attorney; font-size:18px; cursor: pointer">Add</a></li>
+      </ul>
+    </div>
+<div style="padding: 10px 10px">
+<img src="assets/images/wright.jpg" alt="Phoenix Wright" class="circle" style="width: 175px; float: left">
+<p style="display: inline-block; margin: auto 20px; font-size:80px; font-family: Ace Attorney">Phoenix Wright</p>
+<br>
+<p style="display: inline; margin: auto 20px; font-family: Ace Attorney; font-size:20px;">The Objection Making Lawyer Has Now Joined Discord!</p>
+</div>
+<div style="padding: 10px 10px;" id="home">
+<p style="font-size:30px; font-family: Ace Attorney;" align="center">Phoenix Wright is a bot created for Discord, a free talk and text app<br>Phoenix Wright can create animated objection gifs within a matter of seconds like this one:</p>
+<p align="center"><img id="exampleGif" src="http://pikabot01.xyz/ImAlwaysWright/228101516672630784.gif" width="500px"></img><i class="material-icons" onclick="repeatGif();" style="cursor: pointer;" title="Repeat?">loop</i></p>
+<div id="THESPINNER"><div id="spinner"><div class="spinner" role="spinner"><div class="spinner-icon"></div></div></div></div>
+<p style="font-size:20px; font-family: Ace Attorney;" align="center">Now you can object to your friends statements!</p>
+</div>
+<div style="padding: 10px 10px" id="commands">
+<table class="bordered">
+<thead><tr><th style="font-size: 120%">Commands</th></tr></thead>
+<tbody>
+<tr><td>!!!ping</td><td class="right-align">Check to see the bots responsiveness.</td></tr>
+<tr><td>!!!help</td><td class="right-align">Displays a help message</td></tr>
+<tr><td>!!!object <something to object></td><td class="right-align">Object something (!!!object You are wrong!)</td></tr>
+</tbody>
+</table>
+<p style="font-size:50px; font-family: Ace Attorney;" align="center">More features coming soon!</p>
+</div>
+<div id="objections">
+<p style="font-size:60px; font-family: Ace Attorney;" align="center">Coming Soon!</p>
+</div>
+<div id="add">
+<p style="font-size:60px; font-family: Ace Attorney;" align="center">Click to open in your browser</p>
+</div>
+<div id="thePopup" class="popup">
+  <div class="popup-content">
+    <div class="popup-header">
+      <span class="close">×</span>
+      <h4>Add to your server</h2>
+    </div>
+    <div class="popup-body">
+	 <iframe src="https://discordapp.com/oauth2/authorize?&client_id=226964246339125248&scope=bot" style="height: 450px; width: 350px; margin: auto; display:block;"></iframe> 
+    </div>
+    <div class="popup-footer">
+      <h5>Open in your browser</h3>
+    </div>
+  </div>
+</div>
+<script>
+// Get the popup
+var popup = document.getElementById('thePopup');
+
+// Get the button that opens the popup
+var btn = document.getElementById("openPopup");
+
+// Get the <span> element that closes the popup
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the popup 
+btn.onclick = function() {
+    popup.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the popup
+span.onclick = function() {
+    popup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the popup, close it
+window.onclick = function(event) {
+    if (event.target == popup) {
+        popup.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
