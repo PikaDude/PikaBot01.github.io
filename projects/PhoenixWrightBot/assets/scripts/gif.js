@@ -1,5 +1,5 @@
 function repeatGif() {
-$('#exampleGif').prop('src', 'http://pikabot01.xyz/ImAlwaysWright/228101516672630784.gif')
+$('#exampleGif').prop('src', 'assets/images/objection.gif')
 }
 window.onload = function() {
 	repeatGif();
