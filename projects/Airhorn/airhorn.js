@@ -1,6 +1,4 @@
 var airhorn2 = 0;
-window.onload = function() {
-}
 window.airhorn = function(){
 	if (document.getElementById('airhorn').className === "")
 	{
