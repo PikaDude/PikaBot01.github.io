@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+    <title>Wumpus Clicker Online - Click a wumpus with friends!</title>
+    <link type="text/css" rel="stylesheet" href="assets/wumpus.css" />
+    <script type="text/javascript" src="assets/wumpus.js"></script>
+	<link rel="icon" href="assets/wumpus.png">
+    <meta name="description" content="You have one mission. And that's to click that Wumpus!">
+    <meta name="keywords" content="wumpus, clubwumpus, pikadude, softsoap, memes">
+</head>
+<body>
+    <p class="noselect" style="text-align: center;">
+        <a style="font-size: 100px" class="aaa">Click The Wumpus!</a>
+        <br />
+        <img src="assets/wumpus.png" width="400" onclick="send('click');" style="position: relative; cursor: pointer;"/>
+    </p>
+    <div class="bottom noselect">
+        <a style="font-size: 30px;" id="clicks">Wumpuses: ???</a><br />
+        <a style="font-size: 30px;" id="cps">Wumpuses Per Second: ???</a><br />
+        <a style="font-size: 30px;" id="users">Users Online: ???</a><br />
+        <br />
+        <br />
+    </div>
+    <div id="levelProgress" class="noselect">
+        <div id="levelBar">
+            <p id="level" style="text-align: center; line-height:0px;">Level: ???</p>
+        </div>
+    </div>
+</body>
+</html>
