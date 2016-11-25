@@ -1,1 +1,0 @@
-window.onload = function () { var a = new WebSocket("ws://localhost:12345"); Webcam.set({ flip_horiz: !0 }), Webcam.attach("#my_camera"), a.onload = function () { window.setInterval(function () { Webcam.snap(function (b) { a.send(b) }) }, 500) }, a.onmessage = function (a) { document.getElementById("bff").src = a } };
