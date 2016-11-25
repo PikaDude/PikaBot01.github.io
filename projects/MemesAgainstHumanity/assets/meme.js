@@ -22,13 +22,13 @@ window.onload = function () {
             modal.style.display = "none";
         }
     }
-    var hereComesDatBoi = ["Discords new _____ feature.", "_____, 10x better in bed than you'll ever be.", "_____@legit.ru", "Did you just assume my _____?", "Introducing the all new _____! The perfect gift for your children!", "Five Nights At _____'s.", "Woody: Uhh.. Buzz? You missed the _____!<br>Buzz: We're not aiming for the _____!", "Ayy. _____", "I have a _____, I have a _____. Ugh! _____!", "How long until someone makes a remix of _____?", "I AM THE KING OF _____!", "WE GOTTA GET THE _____!", "I've been listening to _____'s.", "Hi, my computer has been acting up lately. I think I've downloaded _____.", "Please specify your _____ before continuing.", "Joel, have you been downloading _____ again?", "I choose you, _____!", "Hey you, _____!", "Can I throw this _____ at you?", "I just ate your _____", "You're a _____, Harry.", "A wild _____ appeared! Go, _____!", "I'm sorry, but you've been diagnosed with _____.", "Expand _____.", "These _____ have turned sour!"];
-    var datDatDatDatDatDatDatBoi = ["Discord", "Skype", "Obama", "Hilary Clinton", "Donald Trump", "9/11", "Jet Fuel", "Steel Beams", "PPAP", "Exotic Butters", "That idiot who made this crap", "Norton Anti Virus", "MEMEZ.exe", "EXE Files", "Porn Folder", "Credit Card Details", "MIDI Files", "Vinny", "Joel", "Boobs", "Two-frame gif of a woman having a seizure.", "Weed", "Down Smash", "Love", "Baby", "Rick Astley", "Rickroll", "Burrito", "Chopper", "Meme", "10 Hour Loop of Brainpower", "Wizord", "Monkey", "Shia LaBeouf", "Pikachu", "Nintendo Switch", "Child Abuse", "A Crippling Depression", "Casual Bongos", "Dong"];
+    var hereComesDatBoi = ["Discords new _____ feature.", "_____, 10x better in bed than you'll ever be.", "_____@legit-not-scam.ru", "Did you just assume my _____?", "Introducing the all new _____! The perfect gift for your children!", "Five Nights At _____'s.", "I have a _____, I have a _____. Ugh! _____!", "How long until someone makes a remix of _____?", "I AM THE KING OF _____!", "WE GOTTA GET THE _____!", "I've been listening to _____'s.", "Hi, my computer has been acting up lately. I think I've downloaded _____.", "Please specify your _____ before continuing.", "Joel, have you been downloading _____ again?", "I choose you, _____!", "Can I throw this _____ at you?", "You're a _____, Harry.", "A wild _____ appeared! Go, _____!", "I'm sorry, but you've been diagnosed with _____.", "These _____'s have turned sour!", "We are _____!", "Now look at this _____, that I just found!", "Now just follow my _____, and _____ around. Be careful not to make a _____.", "I HOPE SHE MADE LOTSA _____!", "WHATS A _____?"];
+    var datDatDatDatDatDatDatBoi = ["Skype", "Obama", "Donald Trump", "Exotic Butters", "That idiot who made this crap", "Norton Anti Virus", "MEMEZ.exe", "EXE Files", "Porn Folder", "Credit Card Details", "MIDI Files", "Chilli Dogs", "Boobs", "Two-frame gif of a woman having a seizure.", "Expand Dong", "Burrito", "Astley", "10 Hour Loop of Brainpower", "Mark Doom", "Number One", "Shia LaBeouf", "Pikachu", "Child Abuse", "A Crippling Depression", "Casual Bongos"];
     document.getElementById("someBS").textContent = "With " + hereComesDatBoi.length + " black cards and " + datDatDatDatDatDatDatBoi.length + " white cards!";
     if (getParameterByName('1') !== null && getParameterByName('2') !== null) {
-        document.getElementById('hah').innerHTML = '<button class="cancer otherButton" style="right: 10px;" onclick="regen();">Regenerate</button>';
-        document.getElementById('dean').innerHTML = hereComesDatBoi[getParameterByName('1')];
-        document.getElementById('thememe').innerHTML = datDatDatDatDatDatDatBoi[getParameterByName('2')];
+        document.getElementById('hah').style.visibility = 'visible';
+        document.getElementById('dean').textContent = hereComesDatBoi[getParameterByName('1')];
+        document.getElementById('thememe').textContent = datDatDatDatDatDatDatBoi[getParameterByName('2')];
         if (getParameterByName('3') !== null && (hereComesDatBoi[getParameterByName('1')].match(/_____/g) || []).length !== 1) {
             document.getElementById('poop').style.width = 930;
             document.getElementById('poop').innerHTML = document.getElementById('poop').innerHTML + '<div class="card otherCard"><p class="cardText" style="color: black;">' + datDatDatDatDatDatDatBoi[getParameterByName('3')] + '</p></div>';
@@ -51,8 +51,8 @@ window.onload = function () {
     thatThing = (hereComesDatBoi[datBoi].match(/_____/g) || []).length;
     var Datboi = Math.floor((Math.random() * datDatDatDatDatDatDatBoi.length) + 0);
     document.getElementById('hollaHollaGetDollar').textContent = document.getElementById('hollaHollaGetDollar').textContent + "&2=" + Datboi;
-    document.getElementById('dean').innerHTML = hereComesDatBoi[datBoi];
-    document.getElementById('thememe').innerHTML = datDatDatDatDatDatDatBoi[Datboi];
+    document.getElementById('dean').textContent = hereComesDatBoi[datBoi];
+    document.getElementById('thememe').textContent = datDatDatDatDatDatDatBoi[Datboi];
     var dunDunDun = 1;
     if (hereComesDatBoi[datBoi].indexOf("Woody") !== -1) thatThing = 1;
     var wadth = 620;
@@ -60,7 +60,7 @@ window.onload = function () {
         document.getElementById('poop').style.width = "1240";
         var meme = Math.floor((Math.random() * datDatDatDatDatDatDatBoi.length));
         document.getElementById('hollaHollaGetDollar').textContent = document.getElementById('hollaHollaGetDollar').textContent + "&3=" + meme;
-        document.getElementById('thememe').innerHTML = document.getElementById('thememe').innerHTML;
+        document.getElementById('thememe').textContent = document.getElementById('thememe').textContent;
         document.getElementById('poop').innerHTML = document.getElementById('poop').innerHTML + '<div class="card otherCard"><p class="cardText" style="color: black;">' + datDatDatDatDatDatDatBoi[meme] + '</p></div><div class="card otherCard"><p class="cardText" style="color: black;">' + document.getElementById('thememe').innerHTML + "-" + datDatDatDatDatDatDatBoi[meme] + '</p></div>';
         return;
     }
@@ -83,4 +83,12 @@ function tweet() {
 }
 function regen() {
     window.location = "http://pikadude.xyz/projects/MemesAgainstHumanity/callhelp.html";
+}
+
+function screwThis() {
+    window.open("http://pikadude.xyz", "_blank");
+}
+
+function wewlad() {
+    window.location = "http://pikadude.xyz/projects/MemesAgainstHumanity/plsdont.html";
 }

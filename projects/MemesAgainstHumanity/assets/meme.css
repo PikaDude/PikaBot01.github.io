@@ -40,6 +40,11 @@
     font-size: 25px;
 }
 
+.otherButton {
+    right: 10px;
+    visibility: hidden;
+}
+
 .otherCard {
     margin: auto 30px;
     background: #f7f7f7;
@@ -175,4 +180,16 @@
     height: 200px;
     align-self: center;
     display: inline-block;
+}
+
+.spaghetti {
+    left: 10px;
+    top: 10px;
+    position: fixed;
+}
+
+.NO {
+    right: 10px;
+    top: 10px;
+    position: fixed;
 }
