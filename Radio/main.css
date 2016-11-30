@@ -40,7 +40,6 @@ audio {
     right: 0;
     bottom: 15%;
     margin: auto;
-    width: 15%;
 }
 
 .center {
@@ -176,19 +175,4 @@ audio {
     padding: 2px 16px;
     background-color: #2C2F33;
     color: white;
-}
-
-.radio {
-    position: fixed;
-    color: #33aaff;
-    font-size: 400%;
-}
-
-.click {
-    cursor: pointer;
-}
-
-.volume-thing {
-    cursor: pointer;
-    padding: 0px 5px;
 }
