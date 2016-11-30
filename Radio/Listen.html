@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="jquery.js"></script>
+    <link type="text/css" rel="stylesheet" href="main.css" />
+    <script src="materialize.min.js"></script>
+    <script src="visualizer.js"></script>
+    <link type="text/css" rel="stylesheet" href="materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <script src="main.js"></script>
+    <title id="wow">PikaDude's Radio</title>
+</head>
+<body>
+    <div id='body-fx-wrapper'>
+        <canvas id='visualizer'></canvas>
+        <div id='foreground' class="poop wow">
+            <img class="circle poop" src="pika.png" />
+            <p class="radio center">PikaDude's Radio</p>
+            <audio crossorigin='anonymous' id='Stream' autoplay>
+                <source type="audio/ogg">
+            </audio>
+            <div class="center" style="position: fixed; top: 60%; width: 90%; height: 10%">
+                <i class="material-icons click" onclick="play()">play_arrow</i>
+                <i class="material-icons click" onclick="pause()">pause</i>
+                <a style="font-size: 250%;" id="title">Loading...</a>
+                <a class="center" style="position: fixed; font-size: 150%" id="users">Loading...</a>
+                <a class="center" style="position: fixed; top: 85%;" id="chrome">I highly recommend you use Google Chrome for the best experience.</a>
+                <div style="width:auto; height: auto; position:fixed; left: 0px; top: 0px">
+                    <i class="material-icons button tooltipped" data-position="bottom" data-delay="50" data-tooltip="FAQ" id="button">help</i>
+                    <i class="material-icons button tooltipped" data-position="bottom" data-delay="50" data-tooltip="Download M3U" id="button" onclick="window.open('http://pikabot01.xyz:8000/PikaDude.m3u')">get_app</i>
+                </div>
+            </div>
+            <a style="padding: 5px; bottom: 0px; left: 0px; position: fixed; font-size: 150%;">Volume:<br /><span onclick="setVol(0);" class="click" id="vol-mute">Mute </span><span onclick="setVol(0.5);" class="volume-thing" id="vol-low">Low</span><span onclick="setVol(1);" class="volume-thing" id="vol-med">Med</span><span onclick="setVol(1.5);" class="volume-thing" id="vol-high">High</span><span onclick="setVol(2);" id="vol-ultra" class="volume-thing">Ultra</span></a>
+            <img style="padding: 5px; width: 20%; bottom: 0px; right: 0px; position:fixed; cursor: pointer" id="discord-logo" onclick="window.open('https://discord.gg/012P7BEh4fzkryZ6P')" src="Discord-Logo+Wordmark-White.png" />
+        </div>
+    </div>
+    <div id="popup" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">X</span>
+                <h2>FAQ</h2>
+            </div>
+            <div class="modal-body">
+                <h5>How do I request songs?</h5>
+                <a style="color: gray">Simply join our Discord Server <span style="color: #33aaff; cursor: pointer" onclick="window.open('https://discordapp.com/invite/012P7BEh4fzkryZ6P')">here</span> and type "🎵request" for more information.</a>
+                <h5>How do I report songs?</h5>
+                <a style="color: gray">Don't like a song? Think a song is innapropriate? Join our Discord Server <span style="color: #33aaff; cursor: pointer" onclick="window.open('https://discordapp.com/invite/012P7BEh4fzkryZ6P')">here</span> and type "🎵report" for more information.</a>
+                <h5>Can I donate? (Funny Joke)</h5>
+                <a style="color: gray">Soon™</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
