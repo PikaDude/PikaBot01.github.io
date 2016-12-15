@@ -1,5 +1,5 @@
 window.onload = function () {
-    var score = -1;
+    var score = 0;
     enchant();
     var left = false;
     var right = false;
@@ -10,6 +10,10 @@ window.onload = function () {
     var speed = 0;
     var time = null;
     var oldPos = null;
+    var aztecs = [];
+    var aztecPos = [];
+    var aztecSpeed = [];
+    var READY = false;
     var game = new Game(512, 512);
     game.fps = 60;
     game.preload(
@@ -112,31 +116,98 @@ window.onload = function () {
                 PLAYAGAINPLS.x = (game.width / 3.5);
             }
             function regen() {
-                score++;
+                READY = false;
                 var meme = 0;
                 while (meme != trees.length) {
                     level.removeChild(trees[meme]);
                     meme++;
                 }
+                var meme = 0;
+                while (meme != aztecs.length) {
+                    level.removeChild(aztecs[meme]);
+                    meme++;
+                }
                 trees.length = 0;
+                aztecs = [];
+                aztecPos = [];
+                aztecSpeed = [];
                 red.x = Math.floor((Math.random() * (background.width - 120)) + 15);
                 red.y = Math.floor((Math.random() * (background.height - 120)) + 25);
-                var max = Math.floor((Math.random() * 100) + 5);
+                var max = Math.floor((Math.random() * 5) + 0);
                 var current = 0;
-                while (current != max) {
+                if (score != 0) {
+                    while (current != max) {
+                        var aztec = new Sprite(16, 24);
+                        level.addChild(aztec);
+                        aztec.image = game.assets['assets/images/player.png'];
+                        aztec.frame = [2];
+                        aztec.x = Math.floor((Math.random() * (background.width - 40)) + 15);
+                        aztec.y = Math.floor((Math.random() * (background.height - 60)) + 25);
+                        aztecs.push(aztec);
+                        aztecPos.push([aztec.x, aztec.y]);
+                        aztecSpeed.push(2);
+                        current++;
+                    }
+                }
+                var max1 = Math.floor((Math.random() * 100) + 5);
+                var current1 = 0;
+                while (current1 != max1) {
                     var tree = new Sprite(32, 32);
                     level.addChild(tree);
                     tree.image = game.assets['assets/images/tree.png'];
-                    current++;
+                    current1++;
                     tree.x = Math.floor((Math.random() * (background.width - 40)) + 15);
                     tree.y = Math.floor((Math.random() * (background.height - 60)) + 25);
                     trees.push(tree);
                 }
+                READY = true;
             }
             game.addEventListener('enterframe', function () {
                 label.text = "Sites Explored: " + score;
                 memesLOL.text = "Time Remaining: " + (100 + ((Date.parse(time) - Date.parse(new Date())) / 1000));
+                var kek = 0;
+                while (kek != aztecs.length) {
+                    var xy = 0;
+                    var xx = hero.x - aztecs[kek].x;
+                    if (xx < 0) {
+                        xx = - xx;
+                    }
+                    var yy = hero.y - aztecs[kek].y;
+                    if (yy < 0) {
+                        yy = -yy;
+                    }
+                    if (xx > yy) {
+                        xy = 0;
+                    }
+                    else {
+                        xy = 1;
+                    }
+                    if (xy == 0) {
+                        if (hero.x - aztecs[kek].x >= 0) {
+                            aztecs[kek].x += aztecSpeed[kek];
+                            aztecs[kek].frame = [18, 18, 18, 26, 26, 26];
+                            aztecs[kek].scaleX = 1;
+                        } else {
+                            aztecs[kek].scaleX = -1;
+                            aztecs[kek].frame = [18, 18, 18, 26, 26, 26];
+                            aztecs[kek].x -= aztecSpeed[kek];
+                        }
+                    }
+                    if (xy == 1) {
+                        if (hero.y - aztecs[kek].y >= 0) {
+                            aztecs[kek].scaleX = 1;
+                            aztecs[kek].frame = [2, 2, 2, 10, 10, 10];
+                            aztecs[kek].y += aztecSpeed[kek];
+                        } else {
+                            aztecs[kek].scaleX = 1;
+                            aztecs[kek].frame = [42, 42, 42, 34, 34, 34];
+                            aztecs[kek].y -= aztecSpeed[kek];
+                        }
+                    }
+                    kek++;
+                }
                 if (hero.within(red, 35)) {
+                    score++;
                     regen();
                 }
                 document.onkeydown = function (e) {
@@ -179,14 +250,43 @@ window.onload = function () {
                     end();
                 }
                 var spaghetti = 0;
+                var mee = false;
                 while (spaghetti != trees.length) {
                     if (hero.within(trees[spaghetti], 20)) {
                         speed = 0.5;
-                        return;
+                        mee = true;
                     } else {
-                        speed = 2;
+                        if (mee == false) {
+                            speed = 2;
+                        }
                     }
                     spaghetti++;
+                }
+                if (READY) {
+                    var kek = 0;
+                    while (kek != aztecs.length) {
+                        var hm = 0;
+                        var memes = false;
+                        while (hm != trees.length) {
+                            if (aztecs[kek].within(trees[hm])) {
+                                if (memes == false) {
+                                    aztecSpeed[kek] = 0.5;
+                                    memes = true;
+                                }
+                            } else {
+                                if (memes == false) {
+                                    aztecSpeed[kek] = 2;
+                                }
+                            }
+                            if (aztecs[kek].within(hero)) {
+                                READY = false;
+                                regen();
+                                return;
+                            }
+                            hm++;
+                        }
+                        kek++;
+                    }
                 }
             });
         }
