@@ -21,7 +21,10 @@ window.onload = function () {
         'assets/images/player.png',
 		'assets/images/red.png',
         'assets/images/grass.png',
-		'assets/images/tree.png'
+		'assets/images/tree.png',
+        'assets/audio/gud.mp3',
+        'assets/audio/airhorn.mp3',
+        'assets/audio/bad.mp3'
         );
     game.onload = function () {
         var menu = new Scene();
@@ -50,6 +53,9 @@ window.onload = function () {
             game.keybind(13, 'play');
         });
         var myAudio = new Audio('assets/audio/bgm (compressed).mp3');
+        var airhorn = new Audio('assets/audio/airhorn.mp3');
+        var gud = new Audio('assets/audio/gud.mp3');
+        var bad = new Audio('assets/audio/bad.mp3');
         myAudio.addEventListener('ended', function () {
             myAudio.currentTime = 0;
             myAudio.play();
@@ -208,6 +214,7 @@ window.onload = function () {
                 }
                 if (hero.within(red, 35)) {
                     score++;
+                    gud.play();
                     regen();
                 }
                 document.onkeydown = function (e) {
@@ -247,6 +254,7 @@ window.onload = function () {
                 }
                 if (((Date.parse(time) - Date.parse(new Date())) / 1000) < -99) {
                     time = null;
+                    airhorn.play();
                     end();
                 }
                 var spaghetti = 0;
@@ -279,6 +287,7 @@ window.onload = function () {
                                 }
                             }
                             if (aztecs[kek].within(hero)) {
+                                bad.play();
                                 READY = false;
                                 regen();
                                 return;
