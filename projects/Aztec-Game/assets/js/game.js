@@ -30,7 +30,7 @@ window.onload = function () {
         menu.addChild(title);
         title.font = "30px swag";
         title.x = (game.width / 5);
-        var help = new Label("You play as a European Explorer whose job is toexplore the Americas. You must search throughthe Ancient Aztec lands for exploration sites,  which are marked by red squares. You must avoidagitated Aztecs and various obstacles which        will slow you down.");
+        var help = new Label("You play as a European Explorer, John Smith,     whose job is to explore the Americas and find a  spot for the first english settlement,                          Jamestown. You must search through the                 Ancient Aztec lands for possible settlement      sites,  which are marked by red squares. You            must avoid agitated Aztecs and obstacles which will slow you down. You have a time limit of 100 seconds so be quick! Use W, A, S and D to move          yourself around.");
         menu.addChild(help);
         help.x = (game.width / 5);
         help.y = 40;
@@ -38,7 +38,7 @@ window.onload = function () {
         var start = new Label("Press ENTER to begin.");
         menu.addChild(start);
         start.x = (game.width / 3);
-        start.y = 200;
+        start.y = 220;
         start.font = "15px swag";
         game.addEventListener('enterframe', function () {
             if (game.input.play && playing == false) {
