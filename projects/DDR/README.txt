@@ -1,2 +1,0 @@
-This song is amazing... check it on SoundCloud: https://soundcloud.com/arctures/2016-discord-spot-keyboard-combos
-Check out the original video while you're at it: https://www.youtube.com/watch?v=rWrjwUm3Oi4
